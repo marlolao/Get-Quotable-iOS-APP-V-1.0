@@ -7,6 +7,7 @@
 //
 
 #import "GQAppDelegate.h"
+#import "GQViewController.h"
 
 @implementation GQAppDelegate
 
@@ -14,6 +15,14 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    GQViewController *vc = [[GQViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    // set UINavigationController as the rootViewController of the window
+    self.window.rootViewController = masterNav;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
